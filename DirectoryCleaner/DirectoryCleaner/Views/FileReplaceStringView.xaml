@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="DirectoryCleaner.Views.FileReplaceStringView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DirectoryCleaner.Views"
+        xmlns:vm="clr-namespace:DirectoryCleaner.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:FileReplaceStringViewModel, IsDesignTimeCreatable=True}" d:DesignWidth="287.82" d:DesignHeight="72">
+    <UserControl.Resources>
+        <ResourceDictionary Source="AppStyle.xaml" />
+    </UserControl.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0">The string before rename</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=Before}" />
+        <Label Grid.Row="1" Grid.Column="0">The string after rename</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=After}" />
+    </Grid>
+</UserControl>
